@@ -20,6 +20,12 @@ app = FastAPI(
     title="Issue Tracker API",
     redirect_slashes=False,
 )
+@app.get("/")
+def root():
+    return {
+        "message": "Issue Tracker API is running successfully 🚀",
+        "docs": "/docs"
+    }
 
 # 🔐 CORS CONFIGURATION
 app.add_middleware(
